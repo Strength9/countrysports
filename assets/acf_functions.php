@@ -1,7 +1,7 @@
 <?php
 
 // Return text field / date etc
-function s9_textid($fieldname, $postid = '', $emptyText = '') {
+function s9_xray_textid($fieldname, $postid = '', $emptyText = '') {
 	
 	$textid = ! empty( get_field($fieldname, $postid) ) ? get_field($fieldname, $postid) : $emptyText;
 	
@@ -9,7 +9,7 @@ function s9_textid($fieldname, $postid = '', $emptyText = '') {
 };
 
 // Return text field / date etc
-function s9_textfield($fieldname, $postid = '', $tag = '', $className = '',$emptyText = '') {
+function s9_xray_textfield($fieldname, $postid = '', $tag = '', $className = '',$emptyText = '') {
 	$sttag = $edtag = $class = '';
 	
 	if ($className != '') { $class =' class= "'.$className.'"'; }
@@ -22,7 +22,7 @@ function s9_textfield($fieldname, $postid = '', $tag = '', $className = '',$empt
 };
 
 // Return Image
-function s9_imagefield($fieldname, $postid = '',  $className = '') {
+function s9_xray_imagefield($fieldname, $postid = '',  $className = '') {
 	$class = '';
 	
 	if ($className != '') { $class =' class= "'.$className.'"'; }
@@ -40,7 +40,7 @@ function s9_imagefield($fieldname, $postid = '',  $className = '') {
 };
 
 // Return Link
-function s9_linkfield($fieldname, $postid = '', $tag = '', $className = '') {
+function s9_xray_linkfield($fieldname, $postid = '', $tag = '', $className = '') {
 	$sttag = $edtag = $class = '';
 	
 	if ($className != '') { $class =' class= "'.$className.'"'; }
@@ -65,7 +65,7 @@ function s9_linkfield($fieldname, $postid = '', $tag = '', $className = '') {
 };
 
 // Return background image from URL
-function s9_style_backgroundimage_URL($fieldname, $postid = '') {
+function s9_xray_style_backgroundimage_URL($fieldname, $postid = '') {
 
 	$styledata = ! empty( get_field($fieldname, $postid) ) ? 'style="background-image: url('.get_field($fieldname, $postid).');"' : $emptyText;
 	
@@ -73,7 +73,7 @@ function s9_style_backgroundimage_URL($fieldname, $postid = '') {
 };
 
 // Return background image from Array
-function s9_style_backgroundimage_Array($fieldname, $postid = '') {
+function s9_xray_style_backgroundimage_Array($fieldname, $postid = '') {
 
 	$image = get_field($fieldname, $postid);
 	if( $image ): $imageoutput = 'style="background-image: url('.$image['url'].');"'; else : $imageoutput = ''; endif;
@@ -82,16 +82,27 @@ function s9_style_backgroundimage_Array($fieldname, $postid = '') {
 };
 
 
-function s9_emaillink($emailaddress, $titletext ='', $extratext = '',$className = '') {
+function s9_xray_maillink($fieldname = '', $postid = '', $titletext ='', $extratext = '',$className = '',$emptyText = '') {
+
+$textdata = ! empty( get_field($fieldname, $postid) ) ? get_field($fieldname, $postid) : $emptyText;
+if ($extratext != '') { $extra = $extratext.' '; } else { $extra = ''; };
+	if ($titletext != '') { $title =' title= "'.$titletext.'"'; };
+	if ($className != '') { $class =' class= "'.$className.'"'; };
+	
+	return '<a href="mailto:'.$textdata .'"'.$titletext.'>'.$extra.$textdata.'</a>';
+}
+function s9_xray_telink($fieldname = '', $postid = '', $titletext ='', $extratext = '',$className = '',$emptyText = '') {
+	
+	$textdata = ! empty( get_field($fieldname, $postid) ) ? get_field($fieldname, $postid) : $emptyText;
+	
 	if ($extratext != '') { $extra = $extratext.' '; } else { $extra = ''; };
 	if ($titletext != '') { $title =' title= "'.$titletext.'"'; };
 	if ($className != '') { $class =' class= "'.$className.'"'; };
 	
-	return '<a href="mailto:'.$emailaddress.'"'.$titletext.'>'.$extra.$emailaddress.'</a>';
+	return '<a href="tel:'.$textdata.'"'.$titletext.'>'.$extra.$textdata.'</a>';
 }
 
-
-function s9_weblink($webaddress, $titletext ='',$className = '') {
+function s9_xray_weblink($webaddress, $titletext ='',$className = '') {
 	if ($webaddress !='') {
 		if ($titletext != '') { $title =' title= "'.$titletext.'"'; };
 		if ($className != '') { $class =' class= "'.$className.'"'; };
@@ -101,4 +112,23 @@ function s9_weblink($webaddress, $titletext ='',$className = '') {
 		return '';
 	};
 }
+
+// Return text field / date etc
+function s9_xray_socialicon($fieldname, $postid = '', $fontawesome = '', $titletext = '',$emptyText = '', $tagtext) {
+	$sttag = $edtag = $class = '';
+	
+
+	
+	if ($tagtext != '') { $sttag = '<'.$tagtext.'>'; $edtag = '</'.$tagtext.'>'; }
+	
+	$textdata = ! empty( get_field($fieldname, $postid) ) ? get_field($fieldname, $postid) : $emptyText;
+	
+	if ($textdata != $emptyText) {
+		$out = $sttag.'<a href="'.$textdata.'" title="'.$titletext.'"><i class="'.$fontawesome.'"></i></a>'.$edtag;	
+	} else { 
+		$out = '';
+	}
+	
+	return $out;
+};
 ?>

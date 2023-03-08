@@ -1,1 +1,68 @@
+main {
+	padding:200px 0 0;
+}
+footer {
+	width:100%;
+	margin:00;
+	padding:50px 20px 0;
+	background-color:$darkgreen;
+	
+	.footercontent {  
+		color:#FFF;
+		margin:0px auto;
+		max-width: $contentwidth;
+		display: grid;
+	  grid-template-columns: 1fr 1fr 1fr 1fr;
+	  grid-template-rows: minmax(10px,auto) minmax(10px,auto);
+	  gap: 0px 0px;
+	  grid-auto-flow: row;
+	  grid-template-areas:
+		"bussdetails menu1 menu2 contactdetails"
+		"copyrightstrip copyrightstrip copyrightstrip copyrightstrip";
+	
+	
+		ul {
+			color:#FFF;
+			margin:0;
+			padding:0;
+			list-style:none;
+			line-height:2;
+			
+			li {
+				list-style:none;
+				
+				&.title {
+					margin-bottom:10px;
+					font-family: "georgiapro", sans-serif;
+					font-weight: 700;
+					font-style: normal;
+					font-size:20px;
 
+				}
+				
+				i { margin-right:10px;}
+				a {
+					color:#FFF;
+					text-decoration:none;
+					
+					&:hover {
+						color:$Basecolor;
+					}
+				}
+			 }
+		}
+	
+		.bussdetails { grid-area: bussdetails; }
+		.menu1 { grid-area: menu1; }
+		.menu2 { grid-area: menu2; }
+		.contactdetails { grid-area: contactdetails; }
+		.copyrightstrip { 
+			padding:10px 0;
+			grid-area: copyrightstrip;
+			border-top: 1px solid rgba(255,255,255,0.3);
+			
+			p {margin:0;}
+		 }
+	}
+
+}
