@@ -67,7 +67,7 @@ function s9_xray_linkfield($fieldname, $postid = '', $tag = '', $className = '')
 // Return background image from URL
 function s9_xray_style_backgroundimage_URL($fieldname, $postid = '') {
 
-	$styledata = ! empty( get_field($fieldname, $postid) ) ? 'style="background-image: url('.get_field($fieldname, $postid).');"' : $emptyText;
+	$styledata = ! empty( get_field($fieldname, $postid) ) ? 'style="background-image: url('.get_field($fieldname, $postid).');"' : '';
 	
 	return $styledata;
 };

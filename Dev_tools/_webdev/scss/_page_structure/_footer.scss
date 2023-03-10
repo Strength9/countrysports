@@ -1,25 +1,26 @@
-main {
-	padding:200px 0 0;
-}
+
 footer {
 	width:100%;
 	margin:00;
 	padding:50px 20px 0;
 	background-color:$darkgreen;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center center;
+	box-shadow: inset 0 0 0 2000px rgba(13, 54, 47, 0.9);
 	
 	.footercontent {  
 		color:#FFF;
-		margin:0px auto;
+		margin:0px 20px;
 		max-width: $contentwidth;
 		display: grid;
-	  grid-template-columns: 1fr 1fr 1fr 1fr;
-	  grid-template-rows: minmax(10px,auto) minmax(10px,auto);
-	  gap: 0px 0px;
-	  grid-auto-flow: row;
-	  grid-template-areas:
-		"bussdetails menu1 menu2 contactdetails"
-		"copyrightstrip copyrightstrip copyrightstrip copyrightstrip";
-	
+	  	grid-template-columns: 1fr;
+	  	grid-template-rows: minmax(10px,auto) minmax(10px,auto) minmax(10px,auto) minmax(10px,auto) minmax(10px,auto);
+	  	gap: 0px 0px;
+	  	grid-auto-flow: row;
+	  	grid-template-areas:
+			"bussdetails" "menu1" "menu2" "contactdetails"
+			"copyrightstrip";
 	
 		ul {
 			color:#FFF;
@@ -30,38 +31,143 @@ footer {
 			
 			li {
 				list-style:none;
-				
+				text-align:center;
 				&.title {
 					margin-bottom:10px;
 					font-family: "georgiapro", sans-serif;
 					font-weight: 700;
 					font-style: normal;
 					font-size:20px;
-
+		
 				}
-				
-				i { margin-right:10px;}
+				&.socials {
+					 	i { margin:30px 10px 0 10px; font-size:30px;}
+			 	}
+				i { margin-right:10px; font-size:15px;}
 				a {
 					color:#FFF;
 					text-decoration:none;
 					
 					&:hover {
-						color:$Basecolor;
+						color:$greenhover;
 					}
 				}
-			 }
+		 	}
+		
 		}
 	
-		.bussdetails { grid-area: bussdetails; }
-		.menu1 { grid-area: menu1; }
-		.menu2 { grid-area: menu2; }
-		.contactdetails { grid-area: contactdetails; }
+	.bussdetails {
+		p {display:none;}
+		img {
+			margin:0 auto 40px !important;
+			max-width:300px;
+			width:80%;
+			height:auto;
+		}
+	}
+	
+	
+		@media only screen and (min-width:500px) and (max-width:600px) {
+			grid-template-columns: 1fr 1fr;
+			gap: 0px 0px;
+			  grid-template-rows: minmax(10px,auto) minmax(10px,auto);
+			grid-template-areas:
+			"bussdetails bussdetails" 
+			"menu1 menu2"
+			"contactdetails contactdetails"
+			"copyrightstrip copyrightstrip";
+			
+			ul {
+				li {
+					text-align:center;
+				}
+			}
+		}
+		@media only screen and (min-width:600px) and (max-width:1200px) {
+			grid-template-columns: 1fr 1fr 1fr; 
+			gap: 0px 0px;
+			  grid-template-rows: minmax(10px,auto) minmax(10px,auto);
+			grid-template-areas:
+			
+			"menu1 menu2 contactdetails"
+			"copyrightstrip copyrightstrip copyrightstrip";
+			.bussdetails {display:none;}
+			
+		}
+		@media only screen and (min-width:1200px) {
+			grid-gap:0 30px ;
+			grid-template-columns: 1.4fr 1fr 1fr 1fr;
+			  grid-template-rows: minmax(10px,auto) minmax(10px,auto);
+			grid-template-areas:
+			"bussdetails menu1 menu2 contactdetails"
+			"copyrightstrip copyrightstrip copyrightstrip copyrightstrip";
+			
+			margin:0px auto;
+			
+			ul {
+				li {
+					text-align:left;
+					
+					&.socials {
+							 i { margin:30px 10px 0 0px; font-size:30px;
+								 
+								 
+							 }
+					 }
+				}
+			}
+			
+			p {text-align:left;}
+			
+			.bussdetails {
+				
+				
+				img.countrysports {
+					
+					margin:0 60px 10px 0 !important;
+				}
+				p {display:block;
+					margin:0 60px 0px 0 !important;
+				}
+			}
+		}
+		@media only screen and (min-width:1350px) {
+			.bussdetails {
+				margin-right:60px;
+			}
+		}
+
+		
+		
+	
+		.bussdetails { grid-area: bussdetails;
+			
+			
+				
+	
+			
+			p {
+				text-align:center;
+				padding:5px 0;
+				font-family: lato, sans-serif;
+				font-weight: 300;
+				font-style: italic;
+				font-size:11px;
+			}
+		 }
+		.menu1 { grid-area: menu1; padding-bottom:50px; }
+		.menu2 { grid-area: menu2; padding-bottom:50px; }
+		.contactdetails { grid-area: contactdetails;  padding-bottom:50px;}
 		.copyrightstrip { 
 			padding:10px 0;
 			grid-area: copyrightstrip;
 			border-top: 1px solid rgba(255,255,255,0.3);
 			
-			p {margin:0;}
+			p {margin:0;padding:10px 0; text-align:center;}
+			
+			@media only screen and (min-width:1200px) {
+				p {text-align:left;}
+			}
 		 }
 	}
 

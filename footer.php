@@ -9,11 +9,13 @@ if (strlen($footfacebook.$twitter_link.$instagram_link.$inkedin_link.$tik_tok_li
 
 
 
-<footer>
+<footer <?php echo s9_xray_style_backgroundimage_URL('footer_background', $postid = 'options');?>>
 	<section class="footercontent">
 				  <div class="bussdetails">
-					  <a href="<?php echo get_home_url();?>"><?php  $footerlogo; ?></a>
-					  <p>Shooting  •  Fishing  •  Equine</p>
+					  <a href="<?php echo get_home_url();?>">
+						  <?php echo s9_xray_imagefield('footer_logo', $postid = 'options',  $className = 'countrysports');?>
+					  </a>
+					  <p class="strap">Traditional field sports in the heart of Kent</p>
 					
 						
 				  </div>

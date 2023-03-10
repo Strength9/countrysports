@@ -1,0 +1,145 @@
+.textandimage {
+	background-size:auto 100%;
+	//background-image:url("assets/img/trees/right_tree_4.webp");
+	background-repeat:no-repeat;
+	background-position:left center;
+	box-shadow: inset 0 0 0 2000px rgba(255,255,255, 0.85);
+	
+	@media only screen and (min-width:1500px) {
+		box-shadow: inset 0 0 0 2000px rgba(255,255,255, 0);
+	}
+	
+	
+	.wcp-columns {
+		margin:0 auto;
+		max-width: $smallcontent;
+		width:90%;
+		display: grid; 
+		grid-template-columns: 1fr; 
+		grid-auto-rows: auto;
+		gap: 30px 30px; 
+		background-position: center top;
+		
+		background-repeat:no-repeat;
+		grid-template-areas:  "textcol" "imagecol";
+		//border:  1px dashed red;
+	
+
+	
+		@media only screen and (min-width:550px) {
+			grid-template-columns: 1fr 250px; 
+			grid-template-areas:  "textcol imagecol";
+		}
+		@media only screen and (min-width:800px) {
+			grid-template-columns: 1fr 1fr; 
+		
+		}
+
+		
+		&.it {
+			grid-template-areas:  "imagecol" "textcol ";
+
+				@media only screen and (min-width:550px) {
+					grid-template-columns: 250px 1fr ; 
+					grid-template-areas:  "imagecol textcol";
+				}
+				@media only screen and (min-width:800px) {
+					grid-template-columns: 1fr 1fr; 
+				
+				}
+		}
+		
+		
+
+	}
+	
+	.textcol { grid-area: textcol; 
+		
+		h2 {
+			order: 1;
+			color:#000;
+			margin-bottom:10px;
+			span {
+				color:$brightgreen !important;
+			}
+			
+			font-size:35px;
+			max-width:350px;
+			
+			
+		}
+		h4 {
+			margin-bottom:10px;
+			font-size:14px;
+			color:$darkgreen !important;
+			text-transform: uppercase;
+			order: 0;
+			font-family: "lato", sans-serif;
+			font-weight: 400;
+			
+		}
+		p {
+			order: 2;
+			color:$Basecolor;
+			
+			&:last-of-type {
+				margin-bottom:0px;
+			}
+		}
+		
+		h2,h4,p {
+			text-align:center !important;
+			margin-left:auto;
+			margin-right:auto;
+			
+			@media only screen and (min-width:550px) {
+				text-align:left !important;
+				margin-left:0;
+			}
+		}
+		
+	}
+	
+	.imagecol {
+		grid-area: imagecol;
+			.rdpairimage {
+	  			position: relative;
+	  			
+	  			width: 100%;
+	  			max-width:350px;
+	  			aspect-ratio: 1 / 1;
+				
+	  					.largeimage {
+								position: absolute;
+								display: block;
+								background-color: #eee;
+								right: 0;
+								bottom: 0;
+								aspect-ratio: 1 / 1;
+								width: 95%;
+								z-index: 1;
+								border-radius: 20px;
+								background-size: cover;
+								background-position: center center;
+								background-repeat: no-repeat;
+	  					}
+	  					.smallimage {
+								position: absolute;
+								display: block;
+								background-color: #a99;
+								left: 0;
+								top: 0;
+								aspect-ratio: 1 / 1;
+								width: 40%;
+								z-index: 2;
+								border-radius: 20px;
+								background-size: cover;
+								background-position: center center;
+								background-repeat: no-repeat;
+	  					}
+				}
+				
+	}
+
+	
+}
