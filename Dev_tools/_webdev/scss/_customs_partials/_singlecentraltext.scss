@@ -1,0 +1,64 @@
+.singlecentraltext {
+	h2 {
+		order: 1;
+		color:#000;
+		margin-bottom:30px;
+		span {
+			color:$brightgreen !important;
+		}
+		
+		font-size:35px;
+	
+	
+		
+		
+	}
+	h4 {
+		margin-bottom:10px;
+		font-size:14px;
+		color:$darkgreen !important;
+		text-transform: uppercase;
+		order: 0;
+		font-family: "lato", sans-serif;
+		font-weight: 400;
+		
+	}
+	p {
+		order: 2;
+		color:$Basecolor;
+		
+		&:last-of-type {
+			margin-bottom:0px;
+		}
+	}
+	
+	h2,h4,p {
+		text-align:center !important;
+		margin-left:auto;
+		margin-right:auto;
+		
+		
+	}
+	
+	.linkbox {
+		order:5;
+		border:1px solid $darkgreen;
+		color:$darkgreen;
+		padding:8px 20px 9px;
+		border-radius:5px;
+		  margin:50px  auto ;
+		  display:inline-block;
+		  text-decoration: none;
+		  text-transform: uppercase;
+		  
+		font-weight: 400;		  
+		  &:hover {
+			  border:1px solid $greenhover;
+			  background-color:$greenhover;
+			  color:$darkgreen;
+			  cursor:pointer;
+			  transition: all 500ms linear;
+		  }
+	}
+	
+}

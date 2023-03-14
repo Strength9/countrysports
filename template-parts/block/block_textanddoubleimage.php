@@ -34,14 +34,11 @@ dble_large_image
  $sectiontree = s9_xray_textfield('tree_background', $postid = '', $tag = '', $className = '',$emptyText = '');
  $sectiontreepos = s9_xray_textfield('tree_background_position', $postid = '', $tag = '', $className = '',$emptyText = '');
 
-if (($sectiontreepos != '') && ( $sectiontree != '')){
-	$treeimage = 'style="background-image:url(/wp-content/themes/countrysports/assets/img/sides/'.$sectiontreepos.'_'.$sectiontree.');  background-position:'.$sectiontreepos.' center;"';
-};
 
 include('______partials_global.php');
 
 /* --------------------------------------------------------------------------- */
-echo '<section '.$anchor.' class="'.$blockclass .'" '.$treeimage.'>
+echo '<section '.$anchor.' class="'.$blockclass .'" '. $sideimage.'>
 	<div class="wcp-columns '.s9_xray_textfield('textimage_column_alignment', $postid = '', $tag = '', $className = '',$emptyText = 'ti').'">
 	 	<div class="wcp-column c_l textcol">
 		 	'.s9_xray_textfield('main_title', $postid = '', $tag = 'h2', $className = '',$emptyText = '').

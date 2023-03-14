@@ -86,20 +86,20 @@ function s9_xray_maillink($fieldname = '', $postid = '', $titletext ='', $extrat
 
 $textdata = ! empty( get_field($fieldname, $postid) ) ? get_field($fieldname, $postid) : $emptyText;
 if ($extratext != '') { $extra = $extratext.' '; } else { $extra = ''; };
-	if ($titletext != '') { $title =' title= "'.$titletext.'"'; };
+	$title =' title= "Email the team"'; 
 	if ($className != '') { $class =' class= "'.$className.'"'; };
 	
-	return '<a href="mailto:'.$textdata .'"'.$titletext.'>'.$extra.$textdata.'</a>';
+	return '<a href="mailto:'.$textdata .'"'.$title.'>'.$extra.'<div class="t">'.$textdata.'</div></a>';
 }
 function s9_xray_telink($fieldname = '', $postid = '', $titletext ='', $extratext = '',$className = '',$emptyText = '') {
 	
 	$textdata = ! empty( get_field($fieldname, $postid) ) ? get_field($fieldname, $postid) : $emptyText;
 	
 	if ($extratext != '') { $extra = $extratext.' '; } else { $extra = ''; };
-	if ($titletext != '') { $title =' title= "'.$titletext.'"'; };
+	$title =' title="Call the team"';
 	if ($className != '') { $class =' class= "'.$className.'"'; };
 	
-	return '<a href="tel:'.$textdata.'"'.$titletext.'>'.$extra.$textdata.'</a>';
+	return '<a href="tel:'.$textdata.'"'.$title.'>'.$extra.'<div class="t">'.$textdata.'</div></a>';
 }
 
 function s9_xray_weblink($webaddress, $titletext ='',$className = '') {

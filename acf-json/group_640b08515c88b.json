@@ -70,6 +70,41 @@
                 "operator": "==",
                 "value": "acf\/block-text-and-image-block"
             }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/block-single-central-text"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/block-news-intro-box"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/block-call-to-action"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/block-contact-block"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/block-full-screen-text"
+            }
         ]
     ],
     "menu_order": 7,
@@ -81,5 +116,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678447013
+    "modified": 1678811130
 }

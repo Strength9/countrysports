@@ -35,9 +35,7 @@
                 "param": "block",
                 "operator": "==",
                 "value": "all"
-            }
-        ],
-        [
+            },
             {
                 "param": "block",
                 "operator": "!=",
@@ -54,5 +52,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678447176
+    "modified": 1678792443
 }

@@ -266,11 +266,7 @@ function example_block_category( $categories, $post ) {
 	add_filter( 'block_categories_all', 'example_block_category', 10, 2);
 
 
-function xray_block_scripts()  { 
-	// get the theme directory style.css and link to it in the header
-	wp_enqueue_script( 'xray-2', get_template_directory_uri() . '/assets/js/slider.js');
-}
-add_action( 'wp_enqueue_scripts', 'xray_block_scripts' ); 
+
 
 
 function random_str(

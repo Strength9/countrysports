@@ -67,13 +67,26 @@
                 "param": "block",
                 "operator": "==",
                 "value": "all"
-            }
-        ],
-        [
+            },
             {
                 "param": "block",
                 "operator": "!=",
                 "value": "acf\/block-page-hero"
+            },
+            {
+                "param": "block",
+                "operator": "!=",
+                "value": "acf\/block-map-block"
+            },
+            {
+                "param": "block",
+                "operator": "!=",
+                "value": "acf\/block-call-to-action"
+            },
+            {
+                "param": "block",
+                "operator": "!=",
+                "value": "acf\/block-image-bar"
             }
         ]
     ],
@@ -86,5 +99,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678473665
+    "modified": 1678808245
 }
